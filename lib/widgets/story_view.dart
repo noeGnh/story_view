@@ -49,7 +49,7 @@ class StoryItem {
   ///
   /// Works for inline and full-page stories. See [StoryView.inline] for more on
   /// what inline/full-page means.
-  static StoryItem text({
+  static StoryItem textOnColorBg({
     @required String title,
     @required Color backgroundColor,
     TextStyle textStyle,
@@ -92,6 +92,44 @@ class StoryItem {
                   fontSize: 18,
                 ),
             textAlign: TextAlign.center,
+          ),
+        ),
+        //color: backgroundColor,
+      ),
+      shown: shown,
+      duration: duration ?? Duration(seconds: 3),
+    );
+  }
+
+  static StoryItem textOnGradientBg({
+    @required String title,
+    @required TextAlign textAlign,
+    @required LinearGradient linearGradient,
+    @required TextStyle textStyle,
+    bool shown = false,
+    bool roundedTop = false,
+    bool roundedBottom = false,
+    Duration duration,
+  }) {
+
+    return StoryItem(
+      Container(
+        decoration: BoxDecoration(
+          gradient: linearGradient,
+          borderRadius: BorderRadius.vertical(
+            top: Radius.circular(roundedTop ? 8 : 0),
+            bottom: Radius.circular(roundedBottom ? 8 : 0),
+          ),
+        ),
+        padding: EdgeInsets.symmetric(
+          horizontal: 24,
+          vertical: 16,
+        ),
+        child: Center(
+          child: Text(
+            title,
+            style: textStyle,
+            textAlign: textAlign,
           ),
         ),
         //color: backgroundColor,

@@ -1,3 +1,19 @@
+## [0.13.2] - 22 November 2021
+- Upgraded rxdart to latest version
+- Remove unnecessary null assertions
+
+## [0.13.1] - 22 April 2021
+Fixed null errors.
+
+## [0.12.8] - 4 Feb 2021
+Merged #84 - Fix Error if playerController has not been loaded and is null
+
+## [0.12.7] - 24 Jan 2021.
+Upgraded rxdart to latest version
+
+## [0.12.6] - 17 Dec 2020.
+Merged PR #74. Provision Key to store values. More here https://github.com/blackmann/story_view/pull/74
+
 ## [0.12.5] - 14 Nov 2020.
 Upgraded video_player to latest version
 

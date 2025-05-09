@@ -59,9 +59,9 @@ class StoryItem {
     Duration? duration,
   }) {
     double contrast = ContrastHelper.contrast([
-      backgroundColor.red,
-      backgroundColor.green,
-      backgroundColor.blue,
+      (backgroundColor.r * 255).round(),
+      (backgroundColor.g * 255).round(),
+      (backgroundColor.b * 255).round(),
     ], [
       255,
       255,
@@ -826,11 +826,11 @@ class StoryProgressIndicator extends StatelessWidget {
         this.indicatorHeight,
       ),
       foregroundPainter: IndicatorOval(
-        Colors.white.withOpacity(0.8),
+        Colors.white.withValues(alpha: 0.8),
         this.value,
       ),
       painter: IndicatorOval(
-        Colors.white.withOpacity(0.4),
+        Colors.white.withValues(alpha: 0.4),
         1.0,
       ),
     );
